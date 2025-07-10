@@ -3,12 +3,18 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Contact Famous Sports Icons. Send us your questions, suggestions, or feedback about legendary athletes and our website.">
+<meta name="keywords" content="contact, sports icons, feedback, questions, suggestions, athletes">
+<meta name="author" content="Famous Sports Icons">
 <title>Contact - Famous Sports Icons</title>
 <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 <header>
-  <h1>Famous Sports Icons</h1>
+  <div class="header-content">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/trophy.png" alt="Logo" class="site-logo" />
+    <h1>Famous Sports Icons</h1>
+  </div>
   <nav>
     <a href="index.html">Home</a>
     <a href="icons.html">Icons</a>
@@ -17,29 +23,45 @@
   </nav>
 </header>
 <main>
-  <h2>Contact Us</h2>
-  <form action="#" method="POST">
-    <label for="name">Name:</label><br />
-    <input type="text" id="name" name="name" required /><br /><br />
+  <section class="contact-hero">
+    <h2>Contact Us</h2>
+    <p class="contact-lead">We'd love to hear from you! Whether you have a question, suggestion, or just want to say hello, fill out the form below and our team will get back to you as soon as possible.</p>
+  </section>
+  <div class="contact-card">
+    <form action="#" method="POST">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" placeholder="Your Name" required />
 
-    <label for="email">Email:</label><br />
-    <input type="email" id="email" name="email" required /><br /><br />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" placeholder="you@email.com" required />
 
-    <label for="message">Message:</label><br />
-    <textarea id="message" name="message" rows="5" required></textarea><br /><br />
+      <label for="message">Message</label>
+      <textarea id="message" name="message" rows="5" placeholder="Type your message here..." required></textarea>
 
-    <button type="submit">Send</button>
-  </form>
-<!-- Include Font Awesome (or use SVG icons) -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<p>Please Rate This Website.</p>
-<div class="rating">
-  <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars"></label>
-  <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars"></label>
-  <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars"></label>
-  <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars"></label>
-  <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star"></label>
-</div>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
+  <div class="contact-alt">
+    <p>Or email us directly at <a href="mailto:sporticons21@gmail.com">sporticons21@gmail.com</a></p>
+  </div>
+  <div class="rate-section">
+    <p>Please Rate This Website.</p>
+    <form id="rating-form" class="rate-section" autocomplete="off">
+      <div class="rating">
+        <div class="rating-stars" id="custom-stars">
+          <input type="radio" id="star5" name="rating" value="5"><label for="star5" title="5 stars" tabindex="0">&#9733;</label>
+          <input type="radio" id="star4" name="rating" value="4"><label for="star4" title="4 stars" tabindex="0">&#9733;</label>
+          <input type="radio" id="star3" name="rating" value="3"><label for="star3" title="3 stars" tabindex="0">&#9733;</label>
+          <input type="radio" id="star2" name="rating" value="2"><label for="star2" title="2 stars" tabindex="0">&#9733;</label>
+          <input type="radio" id="star1" name="rating" value="1"><label for="star1" title="1 star" tabindex="0">&#9733;</label>
+        </div>
+        <span id="star-value" style="margin-left:1em;font-size:1.2em;color:#4E989D;"></span>
+        <button type="button" id="clear-rating" style="margin-left:1em; background:#eee; border:none; border-radius:4px; padding:0.3em 0.7em; cursor:pointer;">Clear</button>
+      </div>
+      <button type="submit" class="rate-btn">Submit Rating</button>
+    </form>
+    <div id="rating-message" style="margin-top:1em;font-weight:500;color:#4E989D;"></div>
+  </div>
 </main>
 <footer>
   <p>&copy; 2025 Sports Icons</p>
@@ -49,5 +71,67 @@
     <a href="privacy.html" class="footer-btn">Privacy</a>
   </div>
 </footer>
+<script>
+// Star rating live value and clear button
+const stars = document.querySelectorAll('#custom-stars input[type="radio"]');
+const starLabels = document.querySelectorAll('#custom-stars label');
+const starValue = document.getElementById('star-value');
+const clearBtn = document.getElementById('clear-rating');
+let lastValue = null;
+
+function updateStarValue(val) {
+  starValue.textContent = val ? val + ' / 5' : '';
+}
+
+stars.forEach(star => {
+  star.addEventListener('change', function() {
+    lastValue = this.value;
+    updateStarValue(this.value);
+  });
+});
+
+starLabels.forEach(label => {
+  label.addEventListener('mouseenter', function() {
+    const forId = this.getAttribute('for');
+    const hovered = document.getElementById(forId);
+    if (hovered) updateStarValue(hovered.value);
+  });
+  label.addEventListener('mouseleave', function() {
+    updateStarValue(lastValue);
+  });
+});
+
+clearBtn.addEventListener('click', function() {
+  stars.forEach(star => { star.checked = false; });
+  lastValue = null;
+  updateStarValue('');
+});
+
+// Keyboard accessibility for labels
+starLabels.forEach(label => {
+  label.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      const forId = this.getAttribute('for');
+      const input = document.getElementById(forId);
+      if (input) {
+        input.checked = true;
+        input.dispatchEvent(new Event('change'));
+      }
+    }
+  });
+});
+
+document.getElementById('rating-form').addEventListener('submit', function(e) {
+  e.preventDefault();
+  const rating = document.querySelector('input[name="rating"]:checked');
+  const msg = document.getElementById('rating-message');
+  if (rating) {
+    msg.textContent = `Thank you for rating us ${rating.value} star${rating.value === '1' ? '' : 's'}!`;
+  } else {
+    msg.textContent = 'Please select a star rating before submitting.';
+  }
+});
+</script>
 </body>
 </html>
