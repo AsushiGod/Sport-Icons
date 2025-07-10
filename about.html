@@ -1,14 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About - Famous Sports Icons</title>
-<link rel="stylesheet" href="style.css" />
-</head>
-<body>
-<header>
-  <h1>Famous Sports Icons</h1>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sports Icons</title>
+  <link rel="stylesheet" href="style.css" />
+  <header>
   <nav>
     <a href="index.html">Home</a>
     <a href="icons.html">Icons</a>
@@ -16,12 +13,192 @@
     <a href="contact.html">Contact Us</a>
   </nav>
 </header>
-<main>
-  <h2>Feedback</h2>
-</main>
-</form>
+<style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+      background-color: #f4f4f4;
+    }
+
+    h1 {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    section {
+      margin-bottom: 50px;
+    }
+
+    h2 {
+      border-bottom: 3px solid #333;
+      padding-bottom: 10px;
+      margin-bottom: 20px;
+    }
+
+    .athletes {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+      gap: 20px;
+    }
+
+    .athlete {
+      background-color: white;
+      border-radius: 10px;
+      padding: 10px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .athlete img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+
+    .athlete-name {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Sports Icons</h1>
+
+  <!-- Soccer -->
+  <section>
+    <h2>Soccer</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Cristiano Ronaldo</div>
+        <img src="Images/" alt="Cristiano Ronaldo">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Lionel Messi</div>
+        <img src="Images/" alt="Lionel Messi">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Pelé</div>
+        <img src="Images/Pele.avif" alt="Pele">
+      </div>
+    </div>
+  </section>
+
+  <!-- Basketball -->
+  <section>
+    <h2>Basketball</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Michael Jordan</div>
+        <img src="Images/" alt="Michael Jordan">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">LeBron James</div>
+        <img src="Images/Lebron.avif" alt="LeBron James">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Kobe Bryant</div>
+        <img src="Images/Kobe.jpg" alt="Kobe Bryant">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Stephen Curry</div>
+        <img src="Images/s" alt="Stephen Curry">
+      </div>
+    </div>
+  </section>
+
+  <!-- American Football -->
+  <section>
+    <h2>American Football</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Tom Brady</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Tom_Brady_2017.JPG" alt="Tom Brady">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Jerry Rice</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Jerry_Rice_2016.jpg" alt="Jerry Rice">
+      </div>
+    </div>
+  </section>
+
+  <!-- Track & Field -->
+  <section>
+    <h2>Track & Field</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Usain Bolt</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f8/Usain_Bolt_Rio_100m_final_2016.jpg" alt="Usain Bolt">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Carl Lewis</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/0f/Carl_Lewis_2010.jpg" alt="Carl Lewis">
+      </div>
+    </div>
+  </section>
+
+  <!-- Tennis -->
+  <section>
+    <h2>Tennis</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Roger Federer</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/30/Roger_Federer_2012.jpg" alt="Roger Federer">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Rafael Nadal</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Rafael_Nadal_2011.jpg" alt="Rafael Nadal">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Martina Navratilova</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/f6/Martina_Navratilova_Wimbledon_2004.jpg" alt="Martina Navratilova">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Serena Williams</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/3/34/Serena_Williams_US_Open_2013.jpg" alt="Serena Williams">
+      </div>
+    </div>
+  </section>
+
+  <!-- Baseball -->
+  <section>
+    <h2>Baseball</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Babe Ruth</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/1/1d/Babe_Ruth2.jpg" alt="Babe Ruth">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Jackie Robinson</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/8/80/Jackie_Robinson_1950.jpg" alt="Jackie Robinson">
+      </div>
+    </div>
+  </section>
+
+  <!-- Boxing -->
+  <section>
+    <h2>Boxing</h2>
+    <div class="athletes">
+      <div class="athlete">
+        <div class="athlete-name">Mike Tyson</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Mike_Tyson_2019.jpg" alt="Mike Tyson">
+      </div>
+      <div class="athlete">
+        <div class="athlete-name">Muhammad Ali</div>
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/01/Muhammad_Ali_NYWTS.jpg" alt="Muhammad Ali">
+      </div>
+    </div>
+  </section>
 <footer>
-  <p>&copy; 2025 Famous Sports Icons</p>
+  <p>&copy; 2025 Sports Icons</p>
+  <div class="footer-links">
+    <a href="contact.html" class="footer-btn">Contacts</a>
+    <a href="#" class="footer-btn">Terms</a>
+    <a href="#" class="footer-btn">Privacy</a>
+  </div>
 </footer>
 </body>
 </html>
+
