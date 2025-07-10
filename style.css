@@ -325,3 +325,14 @@ body {
   background-position: center;   /* Center the image */
  }
 }
+ /* 🔳 Uniform Icon Image Styling */
+.icon img {
+  width: 200px;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+  margin-bottom: 1em;
+}
+
+
