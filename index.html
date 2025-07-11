@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="Explore the greatest sports icons, their achievements, and their impact on and off the field. Discover legendary athletes from soccer, basketball, football, and more.">
+<meta name="keywords" content="sports, icons, athletes, legends, soccer, basketball, football, baseball, tennis, track, boxing">
+<meta name="author" content="Famous Sports Icons">
+<title>Famous Sports Icons</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Montserrat:wght@700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<header>
+  <div class="header-content">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/trophy.png" alt="Logo" class="site-logo" />
+    <h1>Famous Sports Icons</h1>
+  </div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="icons.html">Icons</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</header>
+<main>
+  <section class="hero">
+    <h2>Welcome to the World of Sports Legends</h2>
+    <p class="subtitle">Celebrating greatness, inspiration, and the spirit of competition</p>
+    <p>Discover the most iconic athletes of all time—their groundbreaking achievements, lasting impact on their respective sports, and the powerful influence they have had beyond the game. These champions have inspired generations around the globe to dream big, work hard, and never give up.</p>
+    <a href="#sports-gallery" class="cta-btn">Explore Icons</a>
+  </section>
+  <hr class="section-divider" />
+  <h3>Featured Sports</h3>
+  <div id="sports-gallery">
+    <div class="sport-card"><img src="Images/Soccer.jpg" alt="Soccer" height = "150" width="200" class="sport-img" data-sport="Soccer"><p>Soccer</p></div>
+    <div class="sport-card"><img src="Images/Football.jpg" alt="Football" height = "150" width="200" class="sport-img" data-sport="Football"><p>Football</p></div>
+    <div class="sport-card"><img src="Images/Boxing.jpg" alt="Boxing" height = "150" width="200" class="sport-img" data-sport="Boxing"><p>Boxing</p></div>
+    <div class="sport-card"><img src="Images/Track.avif" alt="Track and Field" height="150" width="200" class="sport-img" data-sport="Track and Field"><p>Track and Field</p></div>
+    <div class="sport-card"><img src="Joahimages/BasketBall.jpg" alt="Basketball" height="150" width="200" class="sport-img" data-sport="Basketball"><p>Basketball</p></div>
+    <div class="sport-card"><img src="Images2/Baseball.jpg" alt="Baseball" height = "150" width="200" class="sport-img" data-sport="Baseball"><p>Baseball</p></div>
+    <div class="sport-card center-last"><img src="Images/Tennis.avif" alt="Tennis" height="150" width="200" class="sport-img" data-sport="Tennis"><p>Tennis</p></div>
+  </div>
+  <div id="sport-facts" style="margin-top:2em; text-align:center; font-size:1.1em;"></div>
+</main>
+<footer>
+  <hr class="footer-divider" />
+  <p class="copyright">&copy; 2025 Sports Icons</p>
+  <div class="footer-links">
+    <a href="our-contact-info.html" class="footer-btn">Contacts</a>
+    <a href="terms.html" class="footer-btn">Terms</a>
+    <a href="privacy.html" class="footer-btn">Privacy</a>
+  </div>
+</footer>
+<script>
+const sportFacts = {
+  Soccer: [
+    "Soccer is the most popular sport in the world, played by over 250 million players in over 200 countries.",
+    "The FIFA World Cup is the most watched sporting event globally.",
+    "A standard soccer match lasts 90 minutes."
+  ],
+  Football: [
+    "American football evolved from rugby and soccer in the late 19th century.",
+    "The Super Bowl is one of the biggest annual sporting events in the United States.",
+    "A touchdown is worth 6 points."
+  ],
+  Boxing: [
+    "Boxing dates back to ancient Greece and was part of the original Olympic Games.",
+    "Muhammad Ali is considered one of the greatest boxers of all time.",
+    "Boxing matches are divided into rounds, usually 3 minutes each."
+  ],
+  "Track and Field": [
+    "Track and field events have been part of the Olympics since 776 BC.",
+    "Usain Bolt holds the world record for the 100m sprint.",
+    "Track events test speed, endurance, and agility."
+  ],
+  Basketball: [
+    "Basketball was invented by Dr. James Naismith in 1891.",
+    "A standard basketball hoop is 10 feet high.",
+    "Michael Jordan is widely regarded as the greatest basketball player ever."
+  ],
+  Baseball: [
+    "Baseball is known as America's pastime.",
+    "A baseball game consists of 9 innings.",
+    "Babe Ruth is one of the most famous baseball players in history."
+  ],
+  Tennis: [
+    "Tennis can be played individually or in doubles.",
+    "Wimbledon is the oldest tennis tournament in the world.",
+    "Serena Williams has won 23 Grand Slam singles titles."
+  ]
+};
+
+// Add click event listeners to each sport image
+const images = document.querySelectorAll('.sport-img');
+// Set default message in facts area
+const factsDiv = document.getElementById('sport-facts');
+factsDiv.innerHTML = '<em>Click on a sport to see facts here.</em>';
+
+images.forEach(img => {
+  img.style.cursor = 'pointer';
+  img.addEventListener('click', function() {
+    const sport = img.getAttribute('data-sport');
+    const facts = sportFacts[sport];
+    if (facts) {
+      factsDiv.innerHTML = `<h4>${sport} Facts:</h4>` + facts.map(f => `<div style='margin-bottom:6px;'>${f}</div>`).join('');
+      factsDiv.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      factsDiv.innerHTML = '<em>Click on a sport to see facts here.</em>';
+    }
+  });
+});
+</script>
+</body>
+</html>
+
+
